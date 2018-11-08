@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue JS</title>
+</head>
+<body>
+
+<div id="app">
+	<input type="text" v-on:input="changeName">
+	<h1>st {{ name }}</h1>
+</div>
+
+<div id="app2">
+	<p> {{ 10 + 60 }} </p>
+	<h1>Number {{ number + 1 }}</h1>
+	<h1>Method {{ sayHello() }}</h1>
+</div>
+	
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+<script>
+	new Vue({
+		el: '#app', 
+		data:{
+			name: 'Vue!'
+			
+		},
+		methods:{
+			changeName: function(event){
+				this.name = event.target.value
+			}
+		}
+	})
+</script>
+
+<script>
+	new Vue2({
+		el: '#app2', 
+		data:{
+			number: 100
+		},
+		methods:{
+			sayHello: function() {
+				return 'I am function'
+			}
+		}
+	})
+
+</script>
+</body>
+</html>

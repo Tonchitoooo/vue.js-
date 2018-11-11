@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<style>
+	.circle{
+		width: 100px;
+		height: 100px;
+		border-radius: 50%;
+		border: 1px solid black;
+		display: inline-block;
+		margin: 40px;
+	}
+	.red {background: red;}
+	.blue{background: blue;}
+	.green{background: green;}
+</style>
+</head>
+<body>
+<div id="app">
+	<!-- <h2 v-if="isVisible">I am visible</h2>
+	<h2 v-else>I am not a visible</h2>
+
+	<button @click="isVisible = !isVisible">Toggle</button> -->
+
+
+<!-- 
+	<h2 v-if="type === 'a'">A</h2>
+	<p style="red">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, voluptate.</p>
+	<h2 v-else-if="type === 'b'">B</h2>
+	<h2 v-else-if="type === 'c'">C</h2>
+	<h2 v-else>not match</h2> 
+
+	<hr>
+
+	<input type="text" v-model="type"> -->
+
+	<template v-show="isVisible">
+		<h2 v-show="isVisible" style="color: blue">I am title</h2>
+		<p v-show="!isVisible" style="color: red">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, provident?</p>
+	</template>
+	
+<!-- не работает отрицание в v-show template -->
+	<template v-show="!isVisible">
+		<h2>I am title</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, provident?</p>
+	</template>
+	<button @click="isVisible = !isVisible">Toggle</button>
+
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+
+<script>
+	new Vue({
+		el: '#app', 
+		data:{
+		 	isVisible: true,
+			type: 'a'
+		}
+	})
+		
+
+</script>
+</body>
+</html>

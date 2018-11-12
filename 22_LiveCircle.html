@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+<div id="app">
+	<h2>{{ title }}</h2>
+
+	<button @click="title = 'Change title'"> Change</button>
+	<button @click="doDestroy"> destroy</button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+
+<script>
+	new Vue({
+		el: '#app',
+		data:{
+		title: 'hello I am Vue  '
+		},
+		methods:{
+			doDestroy: function() {
+				this.$destroy()
+			}
+		},
+		beforeCreate: function() {
+			console.log('before Create')
+		},
+		created: function() {
+
+			console.log('created')
+		},
+		beforeMount: function() {
+			console.log('Before Mount')
+		},
+		mounted: function() {
+			console.log('mounted')
+		},
+		beforeUpdate: function() {
+			console.log('before Update')
+		},
+		Updated: function() {
+			console.log('Updated')
+		},
+		beforeDestroy: function() {
+			console.log('Before Destroy')
+		},
+		destroyed: function() {
+			console.log('destroyed')
+		}
+		
+		
+	})
+
+
+		
+
+</script>
+</body>
+</html>

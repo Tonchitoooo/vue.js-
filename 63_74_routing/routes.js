@@ -68,5 +68,4 @@ export default  new VueRouter({
       y: 0
     }
   }
-
 })

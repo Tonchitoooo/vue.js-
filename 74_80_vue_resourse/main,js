@@ -1,0 +1,19 @@
+import Vue from 'vue'
+import App from './App.vue'
+import VueResourse from 'vue-resource'
+
+Vue.use(VueResourse)
+
+Vue.http.options.root = 'http://localhost:3000/'
+Vue.http.interceptors.push(request =>{
+
+  request.headers.set('Auth2', 'RAND TOKEN ' + Math.random())
+
+})
+
+new Vue({
+  el: '#app',
+  render: h => h(App),
+})
+
+
